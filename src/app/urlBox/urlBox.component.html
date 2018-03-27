@@ -1,0 +1,10 @@
+<mat-nav-list>
+    <form class="example-form">
+        <input name="newURL" matInput placeholder="Wpisz adress URL" [(ngModel)]="newURL">
+        <button mat-flat-button type="button" (click)="addLink()"> Dodaj link do listy </button>
+    </form>
+
+    <mat-list-item *ngFor="let link of links">
+        <a matLine href="#">{{ link }}</a>
+    </mat-list-item>
+</mat-nav-list>
