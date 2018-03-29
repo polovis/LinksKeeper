@@ -4,7 +4,8 @@ import { Component } from '@angular/core';
 @Component({
   selector: 'urlBox-component',
   templateUrl: './urlBox.component.html',
-  styles: [    
+  styles: [
+    'input{margin-left: 10px; height: 30px}'    
   ]
 })
 export class UrlBoxComponent {
@@ -18,3 +19,6 @@ export class UrlBoxComponent {
     this.newURL = '';
   }
 }
+
+
+

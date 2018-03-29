@@ -1,10 +1,14 @@
-<mat-nav-list>
+<div>
     <form class="example-form">
-        <input name="newURL" matInput placeholder="Wpisz adress URL" [(ngModel)]="newURL">
-        <button mat-flat-button type="button" (click)="addLink()"> Dodaj link do listy </button>
+        <mat-form-field class="example-full-width">
+            <input name="newURL" ng-model="enter" matInput placeholder="Wpisz adress URL" [(ngModel)]="newURL">
+        </mat-form-field>
+        <button mat-flat-button id="add" type="button" (click)="addLink()"> Dodaj link do listy </button>
     </form>
-
-    <mat-list-item *ngFor="let link of links">
-        <a matLine href="#">{{ link }}</a>
-    </mat-list-item>
-</mat-nav-list>
+    <ul class="mat-nav-list">
+        <span>List of your favorite links:</span>
+        <li class="mat-list-item" ng-repeat="all url" *ngFor="let link of links">
+            <a matLine href="#">{{ link }}</a>
+        </li>
+    </ul>
+</div>

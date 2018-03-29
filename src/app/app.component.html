@@ -1,5 +1,12 @@
-<div class="container">
-    <nav-component></nav-component>
-  <br/>
-    <urlBox-component></urlBox-component>
+<div [ngClass]="materialTheme" class="mat-typography app-frame mat-app-background mat-app-foreground">
+  <div class="mat-drawer-container mat-sidenav-container" style="height: calc(100vh - 20px)">
+    <header>        
+            <nav-component></nav-component>  
+    </header>
+    
+    
+    
+      <urlBox-component class="urlBox"></urlBox-component>
+    
   </div>
+</div>
