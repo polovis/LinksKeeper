@@ -1,0 +1,45 @@
+.input-wrapper{
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    margin-top: 150px;
+}
+
+.mat-nav-list{
+    list-style-type: none;
+    
+}
+
+.mat-nav-list span{   
+    font-size: 15px;  
+    color: rgb(83, 78, 78);  
+    
+    // color: rgb(42, 66, 134);
+}
+
+.last-link-container{    
+    border: 2px solid gray;    
+    flex-shrink: 2; 
+    background-color: rgba(146, 142, 142, 0.3);  
+}
+
+.link-container{    
+    border: 2px solid gray;    
+    flex-grow: 3;   
+    color: rgb(83, 78, 78);
+    background-color: rgba(146, 142, 142, 0.3); 
+    span ul{
+        display: flex;
+        flex-direction: row;
+        width: 100%;
+        li:nth-child(2n) {
+            background-color: gray;
+            
+        }
+    }
+}
+
+.mat-list-item a{
+    color: rgb(83, 78, 78);
+    font-size: 10px;
+}

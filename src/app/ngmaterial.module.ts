@@ -3,6 +3,10 @@ import { CommonModule } from '@angular/common';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatButtonModule, MatMenuModule, MatCheckboxModule, MatListModule, MatInputModule } from '@angular/material';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { NgSelectModule, NgOption } from '@ng-select/ng-select';
+import { MatSelectModule } from '@angular/material/select';
+
+
 
 @NgModule({
   imports: [
@@ -13,8 +17,11 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     MatListModule,
     MatInputModule,
     FormsModule,
+    NgSelectModule,
     ReactiveFormsModule,
-    MatInputModule],
+    MatInputModule,
+    MatSelectModule
+  ],
   exports: [
     MatButtonModule,
     MatButtonModule,
@@ -23,6 +30,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     MatListModule,
     FormsModule,
     ReactiveFormsModule,
-    MatInputModule]
+    MatInputModule,
+    MatSelectModule]
 })
 export class MaterialAppModule { }
