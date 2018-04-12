@@ -12,25 +12,16 @@ import { LinksService } from '../links.service';
   ]
 })
 export class NavComponent {
+  info: string = "Inne";
   programming;
 
+    
   constructor(private linksService: LinksService) { }
+
+  
 
   ngOnInit(){
     this.programming = this.linksService.getProgramming();
-  }
- 
-  // programming: Array<object> = [
-  //   {
-  //   description: "flex box",
-  //   url: "http://www.css-tricks.com/snippets/css/a-guide-to-flexbox/"    
-  // },
-  // {
-  //   description: "align",
-  //   url: "https://www.w3schools.com/css/css_align.asp"    
-  // }
-  // ] 
-  
-  
+  }  
 }
 

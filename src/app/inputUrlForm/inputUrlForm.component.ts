@@ -18,14 +18,14 @@ export class InputUrlFormComponent {
   category: Array<string> = ['Programowanie', 'inne', 'Bonsai'];
   newURL: string = "";
   descriptionURL: string = "";    
-  selectValue: string; 
+  selectValue: string;   
   
   @Output() send = new EventEmitter<object>();
 
   submit(){    
     let link = new Link(this.newURL, this.descriptionURL, this.selectValue);
     this.send.emit(link);  
-    this.newURL = "";
+    this.newURL = "";    
     this.descriptionURL = "";
   }
 }

@@ -5,6 +5,7 @@ import { ContainerComponent } from './container/container.component';
 @Injectable()
 export class LinksService {  
 
+  prog: { description: string; url: string; category: string; }[];
   private category = ["Programowanie", "Bonsai", "Inne"].sort();
   private lastAddedLink: string[] = [
     "http://www.css-tricks.com/snippets/css/a-guide-to-flexbox/",
@@ -14,23 +15,32 @@ export class LinksService {
   private programming = [
     {
     description: "flex box",
-    url: "http://www.css-tricks.com/snippets/css/a-guide-to-flexbox/"    
+    url: "http://www.css-tricks.com/snippets/css/a-guide-to-flexbox/",
+    category: "Programowanie"   
   },
   {
     description: "align",
-    url: "https://www.w3schools.com/css/css_align.asp"    
+    url: "https://www.w3schools.com/css/css_align.asp",
+    category: "Programowanie"   
   },
   {
     description: "Angular: services",
-    url: "https://angular.io/tutorial/toh-pt4"    
+    url: "https://angular.io/tutorial/toh-pt4",
+    category: "Programowanie"    
   }, 
   {
     description: "Angular: Select Form",
-    url: "https://github.com/ng-select/ng-select#api"    
+    url: "https://github.com/ng-select/ng-select#api",
+    category: "Programowanie"    
+  },
+  {
+    description: "Onet.pl",
+    url: "https://www.onet.pl",
+    category: "Inne"    
   }
   ]  
 
-  getProgramming(){    
+  getProgramming(){       
     return this.programming;   
   }
 
