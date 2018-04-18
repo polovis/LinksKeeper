@@ -6,8 +6,6 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NgSelectModule, NgOption } from '@ng-select/ng-select';
 import { MatSelectModule } from '@angular/material/select';
 
-
-
 @NgModule({
   imports: [
     BrowserAnimationsModule,    

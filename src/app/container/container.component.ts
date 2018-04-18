@@ -2,7 +2,6 @@ import { Component, Input } from '@angular/core';
 import { LinksService } from '../links.service';
 import { Link } from '../link';
 
-
 @Component({
   selector: 'app-container-component',
   templateUrl: './container.component.html',
@@ -13,16 +12,13 @@ export class ContainerComponent {
   linkToAdd: object;
   programming: Array<object>;
 
+  @Input() category: string;
 
-  constructor(private linksService: LinksService) {
-  }  
+  constructor(private linksService: LinksService) { }
 
-  onSend(newObj: Link) {      
-       this.linksService.addLink(newObj);
+  onSend(newObj: Link) {
+    this.linksService.addLink(newObj);
   }
-
-  
-
 }
 
 

@@ -17,6 +17,11 @@ header{
     position: relative;
 }
 
+.mat-drawer-container{
+    height: calc(100% - 20px);
+    position: relative;
+}
+
 .flex{
     display: flex;
 }

@@ -8,7 +8,7 @@ import { NavComponent } from './nav/nav.component';
 import { LinksService } from './links.service';
 import { InputUrlFormComponent } from './inputUrlForm/inputUrlForm.component';
 import { ContainerComponent } from './container/container.component';
-
+import { LinksKeeperComponent } from './linksKeeper/linksKeeper.component';
 
 @NgModule({
   declarations: [
@@ -16,16 +16,16 @@ import { ContainerComponent } from './container/container.component';
     ContainerComponent,
     UrlDisplayBoxComponent,
     NavComponent,
-    InputUrlFormComponent
+    InputUrlFormComponent,
+    LinksKeeperComponent
   ],
   imports: [
     BrowserModule,
     MaterialAppModule
   ],
-  exports: [    
-    
+  exports: [
   ],
-  providers: [LinksService, ContainerComponent],
+  providers: [LinksService, ContainerComponent, NavComponent],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

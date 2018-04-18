@@ -1,24 +1,24 @@
-<div class="input-wrapper">
+<div class='input-wrapper'>
     <div>
-        <form class="url-input" #inputForm>
-            <mat-form-field class="url-input-width">
-                <input name="newURL" ng-model="enter" matInput placeholder="Wpisz adress URL" [(ngModel)]="newURL">
+        <form class='url-input' #inputForm>
+            <mat-form-field class='url-input-width'>
+                <input name='newURL' ng-model='enter' matInput placeholder='Wpisz adress URL' [(ngModel)]='newURL'>
             </mat-form-field>
 
-            <mat-form-field class="description-input-width">
-                <input matInput name="descriptionURL" [(ngModel)]="descriptionURL" #message maxlength="256" placeholder="Dodaj opis">
+            <mat-form-field class='description-input-width'>
+                <input matInput name='descriptionURL' [(ngModel)]='descriptionURL' #message maxlength='256' placeholder='Dodaj opis'>
             </mat-form-field>
 
             <mat-form-field>
-                <mat-select name="selectValue" placeholder="Wybierz kategorię" [(value)]="selectValue">
-                    <mat-option *ngFor="let c of category" [value]="c">
+                <mat-select name='selectValue' placeholder='Wybierz kategorię' [(value)]='selectValue'>
+                    <mat-option *ngFor='let c of category' [value]='c'>
                         {{ c }}
                     </mat-option>
                 </mat-select>
             </mat-form-field>
 
-            <button mat-flat-button id="add" type="button" (click)="submit()"> Dodaj link do listy </button>
+            <button mat-flat-button id='add' type='button' (click)='submit()'> Dodaj link do listy </button>
 
         </form>
-    </div>    
+    </div>
 </div>

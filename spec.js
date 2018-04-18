@@ -5,7 +5,7 @@ describe('Check new URL adding app', function() {
     var allURL = element.all(by.repeater('all url'));
 
     
-    it('sprawdzenie jaki url został wpisany w inpucie', function() {
+    it('check out what url address was inserted in input field', function() {
 
       newURL.sendKeys('http://www.ibuki.com.pl');
       addBtn.click();
@@ -13,7 +13,7 @@ describe('Check new URL adding app', function() {
       expect(newURLr.getAttribute('value')).toBe('http://www.ibuki.com.pl');     
     });  
 
-    it('dodanie dwóch adresów url i sprawdzenie czy oba zostały wylistowane', function() {
+    it('adding two url adresses and check out if both were listed', function() {
       newURL.sendKeys('http://www.ibuki.com.pl');        
       addBtn.click();
       newURL.sendKeys('http://www.ilovebonsai.pl');

@@ -1,28 +1,33 @@
-import { Component, Input, SimpleChanges } from '@angular/core';
+import { Component, Input, OnChanges, SimpleChanges } from '@angular/core';
 import { LinksService } from '../links.service';
-import { Link} from '../link';
+import { Link } from '../link';
 
 @Component({
   selector: 'app-urlDisplayBox-component',
   templateUrl: './urlDisplayBox.component.html',
-  styleUrls: ["./urlDisplayBox.component.scss"] 
+  styleUrls: ['./urlDisplayBox.component.scss']
 })
 
-export class UrlDisplayBoxComponent {  
- 
-  links: Array<object>;
-  lastFiveLinks: string[]; 
-  
-  @Input() public programming: Array<object>; 
+export class UrlDisplayBoxComponent implements OnChanges {
 
-  constructor(private linksService: LinksService, private lastLinks: LinksService) {
-    this.links = linksService.getProgramming();
-    this.lastFiveLinks = lastLinks.getLastLinks();
+  links: Array<Link>;
+  lastFiveLinks: Array<Link>;
+
+  @Input() public category: string;
+
+  constructor(private linksService: LinksService) {
+    linksService.getLatestLinks().subscribe(lastLinks => {
+      this.lastFiveLinks = lastLinks;
+    });
+
+    linksService.getLinks().subscribe((allLinks) => {
+      this.links = allLinks;
+    });
   }
-  
- 
-    
+
+  ngOnChanges(changes: SimpleChanges): void {
+    this.links = this.links.filter((aLink) => {
+      return !this.category || aLink.category === this.category;
+    })
+  }
 }
-
-
-
