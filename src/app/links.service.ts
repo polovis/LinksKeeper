@@ -2,58 +2,38 @@ import { Injectable, Input, Output, EventEmitter, ValueProvider } from '@angular
 import { Link } from './link';
 import { ContainerComponent } from './container/container.component';
 import { NavComponent } from './nav/nav.component';
-import { Observable } from 'rxjs/Observable';
-import { Subject } from 'rxjs';
+import { Observable, Subject, BehaviorSubject } from 'rxjs';
 
 @Injectable()
 export class LinksService {
-
-  categoryFromNav: string;
-  private lastAddedLink: string[] = [
-    'http://www.css-tricks.com/snippets/css/a-guide-to-flexbox/',
-    'https://www.w3schools.com/css/css_align.asp',
-    'https://angular.io/tutorial/toh-pt4'
-  ];
+  
   private links = [
-    {
-      description: 'flex box',
-      url: 'http://www.css-tricks.com/snippets/css/a-guide-to-flexbox/',
-      category: 'Programowanie'
-    },
-    {
-      description: 'align',
-      url: 'https://www.w3schools.com/css/css_align.asp',
-      category: 'Programowanie'
-    },
-    {
-      description: 'Angular: services',
-      url: 'https://angular.io/tutorial/toh-pt4',
-      category: 'Programowanie'
-    },
-    {
-      description: 'Angular: Select Form',
-      url: 'https://github.com/ng-select/ng-select#api',
-      category: 'Programowanie'
-    },
-    {
-      description: 'Onet.pl',
-      url: 'https://www.onet.pl',
-      category: 'Inne'
-    }
+    new Link('http://www.css-tricks.com/snippets/css/a-guide-to-flexbox/', 'flex box', 'Programowanie'),
+    new Link ('https://www.w3schools.com/css/css_align.asp', 'align', 'Programowanie'),
+    new Link ('https://angular.io/tutorial/toh-pt4', 'Angular: services', 'Programowanie'),
+    new Link ('https://github.com/ng-select/ng-select#api', 'Angular: Select Form', 'Programowanie'),
+    new Link ('https://www.onet.pl', 'Onet.pl', 'Inne')   
   ]
-  private allLinks = new Subject<Array<Link>>();
-  private lastLinks = new Subject<Array<Link>>();
+  private allLinks;
+  private lastLinks = new BehaviorSubject<Array<Link>>([]);
 
   constructor() {
-    this.allLinks.subscribe((list) => {
+    this.allLinks = new BehaviorSubject<Array<Link>>(this.links);    
+    this.allLinks.subscribe((list) => {      
       let last = list.slice(0, 4);
       this.lastLinks.next(last);
     });
-    this.allLinks.next(this.links);
-  }
 
-  getLastLinks() {
-    return this.lastAddedLink;
+  }
+  getCategory(cat){
+    console.log(`kategoria: ${cat}`)
+  }
+  getProgramming(category?: string) {
+    if (category) {
+      return this.links.filter(cat => cat.category === category);
+    } else {
+      return this.links;
+    }
   }
 
   addLink(link: Link) {

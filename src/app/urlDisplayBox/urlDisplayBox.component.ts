@@ -11,23 +11,25 @@ import { Link } from '../link';
 export class UrlDisplayBoxComponent implements OnChanges {
 
   links: Array<Link>;
+  allLinks: Array<Link>;
   lastFiveLinks: Array<Link>;
 
   @Input() public category: string;
 
-  constructor(private linksService: LinksService) {
+  constructor(private linksService: LinksService) {    
+    linksService.getLinks().subscribe((allLinks) => {
+      this.allLinks = allLinks;
+    });
     linksService.getLatestLinks().subscribe(lastLinks => {
       this.lastFiveLinks = lastLinks;
-    });
-
-    linksService.getLinks().subscribe((allLinks) => {
-      this.links = allLinks;
-    });
+    });    
   }
 
-  ngOnChanges(changes: SimpleChanges): void {
-    this.links = this.links.filter((aLink) => {
-      return !this.category || aLink.category === this.category;
+  ngOnChanges(changes: SimpleChanges){
+    
+    this.links = this.allLinks.filter((aLink) => {
+      return !this.category || aLink.category === this.category;     
     })
+    
   }
 }

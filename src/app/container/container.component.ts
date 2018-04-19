@@ -10,7 +10,7 @@ import { Link } from '../link';
 
 export class ContainerComponent {
   linkToAdd: object;
-  programming: Array<object>;
+  links: Array<object>;
 
   @Input() category: string;
 

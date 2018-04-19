@@ -18,7 +18,7 @@
   <div class='button-row'>
     <button mat-button [matMenuTriggerFor]='programowanie' class='button-links'>Programowanie</button>
     <mat-menu #programowanie='matMenu'>
-      <div *ngFor='let item of programming; let i = index'>
+      <div *ngFor='let item of links; let i = index'>
         <button mat-menu-item [matMenuTriggerFor]='i' type='text' class='btn'>{{item.description}}: </button>
         <mat-menu #i='matMenu' class='linkstyle'>
           <a [href]='item.url' target='_blank'>{{item.url}}</a>
@@ -32,7 +32,7 @@
 
     <button mat-button>
       <a mat-list-item href='#' (click)='getCategory("Inne")'>Inne</a>
-    </button>   
+    </button>
   </div>
 
 
