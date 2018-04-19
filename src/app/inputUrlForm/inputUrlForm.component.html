@@ -1,0 +1,24 @@
+<div class='input-wrapper'>
+    <div>
+        <form class='url-input' #inputForm='ngForm' (ngSubmit)='submit(inputForm)'>
+            <mat-form-field class='url-input-width'>
+                <input required name='newURL' ng-model='enter' matInput placeholder='Wpisz adress URL' [(ngModel)]='newURL'>
+            </mat-form-field>
+
+            <mat-form-field class='description-input-width'>
+                <input required matInput name='descriptionURL' [(ngModel)]='descriptionURL' #message maxlength='256' placeholder='Dodaj opis'>
+            </mat-form-field>
+
+            <mat-form-field>
+                <mat-select required name='selectValue' placeholder='Wybierz kategorię' [(value)]='selectValue'>
+                    <mat-option *ngFor='let category of categies' [value]='categories'>
+                        {{ c }}
+                    </mat-option>
+                </mat-select>
+            </mat-form-field>
+
+            <button mat-flat-button id='add' type='submit' [disabled]='!inputForm.form.valid'> Dodaj link do listy </button>
+
+        </form>
+    </div>
+</div>

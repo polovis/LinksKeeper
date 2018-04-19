@@ -1,0 +1,20 @@
+<div class='input-wrapper'>
+    <div class='link-container'>
+        <h1>Strony poświęcone programowaniu</h1>
+        <span>
+            <ul *ngFor='let item of links; let i = index'>
+                <li>{{item.description}}:
+                    <a [href]='item.url' target='_blank'>{{item.url}}</a>
+                </li>
+            </ul>
+        </span>
+    </div>
+    <div class='last-link-container'>
+        <ul class='mat-nav-list'>
+            <span>Lista ostatnio wprowadzonych linków:</span>
+            <li class='mat-list-item' ng-repeat='all url' *ngFor='let link of lastFiveLinks'>
+                <a matLine href='{{link.description}}' target='_black'>{{ link.url }}</a>
+            </li>
+        </ul>
+    </div>
+</div>
