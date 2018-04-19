@@ -20,6 +20,3 @@ export class ContainerComponent {
     this.linksService.addLink(newObj);
   }
 }
-
-
-

@@ -3,7 +3,6 @@ describe('Check new URL adding app', function() {
     var addBtn = element(by.id('add'));
     
     var allURL = element.all(by.repeater('all url'));
-
     
     it('check out what url address was inserted in input field', function() {
 

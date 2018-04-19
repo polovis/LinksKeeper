@@ -17,4 +17,3 @@ export class NavComponent {
     this.send.emit(category);
   }
 }
-
