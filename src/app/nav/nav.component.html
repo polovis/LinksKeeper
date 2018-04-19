@@ -1,0 +1,39 @@
+<header>
+  <div class='logo-row'>
+    <div class='flex'>
+      <button mat-button>
+        <a mat-list-item href='#'>LINK Keeper</a>
+      </button>
+    </div>
+    <div class='flex'>
+      <button mat-button>
+        <a mat-list-item href='#'>Historia</a>
+      </button>
+      <button mat-button>
+        <a mat-list-item href='#'>O mnie</a>
+      </button>
+    </div>
+  </div>
+
+  <div class='button-row'>
+    <button mat-button [matMenuTriggerFor]='programowanie' class='button-links'>Programowanie</button>
+    <mat-menu #programowanie='matMenu'>
+      <div *ngFor='let item of links; let i = index'>
+        <button mat-menu-item [matMenuTriggerFor]='i' type='text' class='btn'>{{item.description}}: </button>
+        <mat-menu #i='matMenu' class='linkstyle'>
+          <a [href]='item.url' target='_blank'>{{item.url}}</a>
+        </mat-menu>
+      </div>
+    </mat-menu>
+
+    <button mat-button>
+      <a mat-list-item href='#' (click)='getCategory("Bonsai")'>Bonsai</a>
+    </button>
+
+    <button mat-button>
+      <a mat-list-item href='#' (click)='getCategory("Inne")'>Inne</a>
+    </button>
+  </div>
+
+
+</header>

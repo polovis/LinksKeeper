@@ -1,0 +1,57 @@
+.url-input {
+    background-color: rgba(146, 142, 142, 0.3);
+    width: 75%;    
+    border: 1px solid gray;
+    position: absolute;
+    left: 150px;
+    top: -40px;
+    margin-left: 15px;
+}
+
+input {
+    margin-left: 10px;
+    height: 30px;
+}
+
+.input-wrapper{
+    position: relative;
+}
+
+.description-input-width {    
+    margin-top: 40px;
+    width: 20%;
+    margin-left: 20px;
+}
+
+.url-input-width{    
+    margin-left: 25px;
+}
+
+.mat-nav-list{
+    list-style-type: none;
+    position: absolute;
+    top: 190px;
+    right: 70px;
+}
+
+.cat{
+    margin-left: 20px;
+    color: gray;
+}
+.btn{
+    color: gray;
+    background-color: rgba(146, 142, 142, 0.3);
+}
+
+#add{
+    margin: 0 20px 10px 0;
+    float: right;
+}
+
+add::after{
+    content: "";
+    clear: both;
+    display: block;
+}
+
+
